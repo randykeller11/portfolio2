@@ -7,6 +7,8 @@ import FutureBed from "../components/FutureBed";
 import VendingMachine from "../components/VendingMachine";
 import Galaxy from "../components/Galaxy";
 
+import { DillaPoster, CavsPoster } from "../components/Posters";
+
 function Loader() {
   const { progress } = useProgress();
   return <Html center>{progress} % loaded</Html>;
@@ -17,16 +19,18 @@ function AboutMe() {
       <ambientLight intensity={0.9} />
       <Sky />
       <Avatar5 />
-      <Galaxy position={[3, 9, 8]} scale={[2, 1.2, 2]} />
+      <Galaxy position={[3, 9, 10]} scale={[2, 1.2, 2]} />
       <Coolroom3
         position={[-1.5, -0.25, -3]}
         scale={[1.8, 1.2, 1.8]}
         rotation={[0, -1.5, 0]}
       />
+      <DillaPoster />
+      <CavsPoster />
       <Stereo
-        position={[9, 0, -4.5]}
+        position={[10, 0, -4.85]}
         scale={[0.4, 0.4, 0.4]}
-        rotation={[0, -0.9, 0]}
+        rotation={[0, -1.4, 0]}
       />
       <FutureBed
         position={[13, 0, 27]}
