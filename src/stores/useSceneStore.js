@@ -2,7 +2,9 @@ import create from "zustand";
 
 const plateDictionary = [
   { next: [1.7, 0, 23], prev: [0, 1, -15] },
-  { next: [4, 1, 15], prev: [0, 0, -15] },
+  { next: [3, 0, 2], prev: [0, 0, -15] },
+  { next: [3, 0, 2], prev: [0, 0, -15] },
+  { next: [3, 0, 2], prev: [0, 0, -15] },
 ];
 
 let useSceneStore = create((set) => ({
