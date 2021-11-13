@@ -6,6 +6,7 @@ import Stereo from "../components/Stereo";
 import FutureBed from "../components/FutureBed";
 import VendingMachine from "../components/VendingMachine";
 import Galaxy from "../components/Galaxy";
+import Djbooth from "../components/Djbooth";
 
 import { DillaPoster, CavsPoster } from "../components/Posters";
 
@@ -25,6 +26,7 @@ function AboutMe() {
         scale={[1.8, 1.2, 1.8]}
         rotation={[0, -1.5, 0]}
       />
+
       <DillaPoster />
       <CavsPoster />
       <Stereo
@@ -41,6 +43,11 @@ function AboutMe() {
         position={[-3.2, 0, 23]}
         scale={[0.9, 0.9, 0.9]}
         rotation={[0, 1, 0]}
+      />
+      <Djbooth
+        position={[21, -1, 16.2]}
+        scale={[1.2, 1.2, 1.2]}
+        rotation={[0, -0.8, 0]}
       />
     </Suspense>
   );
