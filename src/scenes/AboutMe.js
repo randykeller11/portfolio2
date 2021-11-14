@@ -45,7 +45,7 @@ function AboutMe() {
         rotation={[0, 1, 0]}
       />
       <Djbooth
-        position={[21, -1, 16.2]}
+        position={[21, -1, 16]}
         scale={[1.2, 1.2, 1.2]}
         rotation={[0, -0.8, 0]}
       />
