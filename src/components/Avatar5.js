@@ -29,6 +29,7 @@ export default function Model({ ...props }) {
   const prev = useRef(null);
   const next = useRef(null);
   const nextDoor = useRef(null);
+  const prevDoor = useRef(null);
 
   let onObject = [];
 
@@ -56,8 +57,10 @@ export default function Model({ ...props }) {
       }
 
       visit === nextDoor.current.uuid && doorStore.toggleNextPlate(true);
+      visit === prevDoor.current.uuid && doorStore.togglePrevPlate(true);
     }
     doorStore.nextPlateState && doorStore.toggleNextPlate(false);
+    doorStore.prevPlateState && doorStore.togglePrevPlate(false);
   }, [visit]);
 
   useFrame((state, delta) => {
@@ -65,6 +68,7 @@ export default function Model({ ...props }) {
     !objects.includes(next.current) && objects.push(next.current);
     !objects.includes(prev.current) && objects.push(prev.current);
     !objects.includes(nextDoor.current) && objects.push(nextDoor.current);
+    !objects.includes(prevDoor.current) && objects.push(prevDoor.current);
 
     // Moving raycaster around with change of camera location
     raycaster.ray.origin.copy(group.current.position);
@@ -136,6 +140,19 @@ export default function Model({ ...props }) {
           roughness={1}
         />
       </mesh>
+
+      <mesh
+        position={doorStore.nextPlatePos}
+        rotation={[-Math.PI / 2, 0, 0]}
+        ref={nextDoor}
+      >
+        <planeBufferGeometry args={[2, 2]} />
+        <meshStandardMaterial
+          attach="material"
+          color={0xff0000}
+          roughness={1}
+        />
+      </mesh>
       <mesh
         position={sceneStore.prevPos}
         rotation={[-Math.PI / 2, 0, 0]}
@@ -149,9 +166,9 @@ export default function Model({ ...props }) {
         />
       </mesh>
       <mesh
-        position={doorStore.nextPlatePos}
+        position={doorStore.prevPlatePos}
         rotation={[-Math.PI / 2, 0, 0]}
-        ref={nextDoor}
+        ref={prevDoor}
       >
         <planeBufferGeometry args={[2, 2]} />
         <meshStandardMaterial

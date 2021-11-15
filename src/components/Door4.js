@@ -12,9 +12,6 @@ export default function Model({ ...props }) {
   const { nodes, materials, animations } = useGLTF("/door4.glb");
   const { actions } = useAnimations(animations, group);
   const doorStore = useDoorStore();
-  const plateTarget = props.next
-    ? doorStore.nextPlateState
-    : doorStore.prevPlateState;
 
   useEffect(() => {
     actions["door_open"].clampWhenFinished = true;
@@ -23,13 +20,15 @@ export default function Model({ ...props }) {
   }, []);
 
   useEffect(() => {
-    if (plateTarget) {
+    if (doorStore.nextPlateState) {
       actions["door_open"].play();
+      console.log("next door should be open");
     }
-    if (!plateTarget) {
+    if (!doorStore.nextPlateState) {
       actions["door_open"].stop();
+      console.log("next door should be closed");
     }
-  }, [plateTarget]);
+  }, [doorStore.nextPlateState]);
 
   return (
     <group ref={group} {...props} dispose={null}>
