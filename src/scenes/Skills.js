@@ -2,6 +2,7 @@ import React, { Suspense, useEffect, useState } from "react";
 import { Sky, useProgress, Html, useGLTF } from "@react-three/drei";
 import Avatar5 from "../components/Avatar5";
 import Gallery from "../components/Gallery";
+import Door4 from "../components/Door4";
 
 function Loader() {
   const { progress } = useProgress();
@@ -23,6 +24,7 @@ function Skills() {
         scale={[2, 2, 2]}
         rotation={[0, -1.6, 0]}
       />
+      <Door4 next={true} position={[7, -0.1, -9.5]} scale={[0.4, 1.7, 1]} />
     </Suspense>
   );
 }

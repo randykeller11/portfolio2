@@ -45,6 +45,7 @@ function AboutMe() {
         rotation={[0, 1, 0]}
       />
       <Door4
+        next={true}
         position={[1.6, -0.2, 24]}
         scale={[0.4, 1.7, 1]}
         rotation={[0, 0.1, 0]}
