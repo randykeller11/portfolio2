@@ -7,9 +7,8 @@ import FutureBed from "../components/FutureBed";
 import VendingMachine from "../components/VendingMachine";
 import Galaxy from "../components/Galaxy";
 import Djbooth from "../components/Djbooth";
-
 import { DillaPoster, CavsPoster } from "../components/Posters";
-
+import Door4 from "../components/Door4";
 function Loader() {
   const { progress } = useProgress();
   return <Html center>{progress} % loaded</Html>;
@@ -18,6 +17,7 @@ function AboutMe() {
   return (
     <Suspense fallback={<Loader />}>
       <ambientLight intensity={0.9} />
+
       <Sky />
       <Avatar5 />
       <Galaxy position={[3, 9, 10]} scale={[2, 1.2, 2]} />
@@ -44,6 +44,7 @@ function AboutMe() {
         scale={[0.9, 0.9, 0.9]}
         rotation={[0, 1, 0]}
       />
+      <Door4 position={[0, 0, 21]} scale={[1, 1, 1]} rotation={[0, 0, 0]} />
       <Djbooth
         position={[21, -1, 16]}
         scale={[1.2, 1.2, 1.2]}
