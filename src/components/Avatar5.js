@@ -7,9 +7,7 @@ import { useGLTF, useAnimations } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import useSceneStore from "../stores/useSceneStore";
-
-import Plate from "./plate";
-
+import useDoorStore from "../stores/useDoorStore";
 import useKeyPress from "../hooks/useKeyPress";
 
 export default function Model({ ...props }) {
@@ -44,12 +42,20 @@ export default function Model({ ...props }) {
   // useEffect to handle scene change on plates
 
   const sceneStore = useSceneStore();
+  const doorStore = useDoorStore();
 
   useEffect(() => {
     if (visit) {
-      visit === next.current.uuid && sceneStore.next(sceneStore.scene + 1);
-      visit === prev.current.uuid && sceneStore.prev(sceneStore.scene - 1);
-      visit === nextDoor.current.uuid && sceneStore.toggleNext(true);
+      if (visit === next.current.uuid) {
+        sceneStore.next(sceneStore.scene + 1);
+        doorStore.next(doorStore.scene + 1);
+      }
+      if (visit === prev.current.uuid) {
+        sceneStore.prev(sceneStore.scene - 1);
+        doorStore.prev(doorStore.scene - 1);
+      }
+
+      visit === nextDoor.current.uuid && doorStore.toggleNext(true);
     }
   }, [visit]);
 
