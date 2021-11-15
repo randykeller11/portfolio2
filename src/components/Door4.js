@@ -22,9 +22,11 @@ export default function Model({ ...props }) {
   useEffect(() => {
     if (doorStore.nextPlateState) {
       actions["door_open"].play();
+      console.log("next door should be open");
     }
     if (!doorStore.nextPlateState) {
       actions["door_open"].stop();
+      console.log("next door should be closed");
     }
   }, [doorStore.nextPlateState]);
 

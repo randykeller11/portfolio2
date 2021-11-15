@@ -9,6 +9,7 @@ import Galaxy from "../components/Galaxy";
 import Djbooth from "../components/Djbooth";
 import { DillaPoster, CavsPoster, SkillsDoor } from "../components/Posters";
 import Door4 from "../components/Door4";
+
 function Loader() {
   const { progress } = useProgress();
   return <Html center>{progress} % loaded</Html>;
@@ -49,6 +50,7 @@ function AboutMe() {
         scale={[0.4, 1.7, 1]}
         rotation={[0, 0.1, 0]}
       />
+
       <SkillsDoor />
       <Djbooth
         position={[21, -1, 16]}
