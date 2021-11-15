@@ -12,6 +12,12 @@ export default function Model({ ...props }) {
   const { actions } = useAnimations(animations, group);
   const [isOpening, setIsOpening] = useState(false);
 
+  useEffect(() => {
+    actions["door_open"].clampWhenFinished = true;
+
+    actions["door_open"].setLoop(THREE.LoopOnce);
+  }, []);
+
   return (
     <group
       onClick={() => {
