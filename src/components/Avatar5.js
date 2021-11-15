@@ -75,15 +75,6 @@ export default function Model({ ...props }) {
       setVisit(false);
     }
 
-    // //handle moving raycaster plates from scene to scene
-    // if (sceneStore.scene === 0) {
-    //   next.current.position = [4, 0, 10];
-    //   prev.current.position = [4, 0, -10];
-    // }
-    // if (sceneStore.scene === 1) {
-    //   next.current.position = [8, 0, 10];
-    //   prev.current.position = [8, 0, -10];
-    // }
     const moveDistance = 5 * delta; // 200 pixels per second
     const rotateAngle = (Math.PI / 2) * delta; // pi/2 radians (90 degrees) per second
 
@@ -94,7 +85,6 @@ export default function Model({ ...props }) {
 
       group.current.position.z = savedPos.current.position.z;
       group.current.position.x = savedPos.current.position.x;
-      //   group.current.rotation.y = savedPos.current.rotation.y;
     }
 
     if (wPress) {
@@ -110,20 +100,6 @@ export default function Model({ ...props }) {
       savedPos.current.position.x = group.current.position.x;
     }
 
-    // if (sPress) {
-    //   // animation.current === "walk" && actions["walk"].stop();
-    //   // animation.current === "idle" && actions["idle"].stop();
-    //   actions["walkBack"].play();
-    //   animation.current = "walkBack";
-
-    //   group.current.position.z = savedPos.current.position.z;
-    //   group.current.position.x = savedPos.current.position.x;
-
-    //   group.current.translateZ(-moveDistance);
-
-    //   savedPos.current.position.z = group.current.position.z;
-    //   savedPos.current.position.x = group.current.position.x;
-    // }
     if (aPress) {
       group.current.rotation.y = group.current.rotation.y + rotateAngle;
     }
@@ -172,7 +148,7 @@ export default function Model({ ...props }) {
         />
       </mesh>
       <mesh
-        position={sceneStore.nextDoorPos}
+        position={doorStore.nextPlatePos}
         rotation={[-Math.PI / 2, 0, 0]}
         ref={nextDoor}
       >

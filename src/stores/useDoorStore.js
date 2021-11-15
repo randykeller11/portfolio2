@@ -9,21 +9,21 @@ const plateDictionary = [
 
 let useSceneStore = create((set) => ({
   scene: 0,
-  nextPlatePos: plateDictionary[0]["nextDoor"],
+  nextPlatePos: plateDictionary[0]["nextPlate"],
   nextDoorOpen: false,
-  prevPlatePos: plateDictionary[0]["prev"],
+  prevPlatePos: plateDictionary[0]["prevPlate"],
 
   next: (sceneIndex) =>
     set((state) => ({
       scene: (state.scene = state.scene + 1),
-      nextPlatePos: plateDictionary[sceneIndex]["next"],
-      prevPlatePos: plateDictionary[sceneIndex]["prev"],
+      nextPlatePos: plateDictionary[sceneIndex]["nextPlate"],
+      prevPlatePos: plateDictionary[sceneIndex]["prevPlate"],
     })),
   prev: (sceneIndex) =>
     set((state) => ({
       scene: (state.scene = state.scene - 1),
-      nextPlatePos: plateDictionary[sceneIndex]["next"],
-      prevPlatePos: plateDictionary[sceneIndex]["prev"],
+      nextPlatePos: plateDictionary[sceneIndex]["nextPlate"],
+      prevPlatePos: plateDictionary[sceneIndex]["prevPlate"],
     })),
   toggleNext: (_isOpen) =>
     set((state) => ({
