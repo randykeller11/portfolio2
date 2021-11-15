@@ -20,12 +20,13 @@ export default function Model({ ...props }) {
   }, []);
 
   useEffect(() => {
-    if (doorStore.nextDoorOpen) {
-      actions["door_open"].clampWhenFinished = true;
+    if (doorStore.nextPlateState) {
       actions["door_open"].play();
-      doorStore.toggleNext(false);
     }
-  }, [doorStore.nextDoorOpen]);
+    if (!doorStore.nextPlateState) {
+      actions["door_open"].stop();
+    }
+  }, [doorStore.nextPlateState]);
 
   return (
     <group ref={group} {...props} dispose={null}>

@@ -1,7 +1,7 @@
 import create from "zustand";
 
 const plateDictionary = [
-  { nextPlate: [1.4, -1, 22], prevPlate: [0, 1, -15] },
+  { nextPlate: [1.4, -1, 23], prevPlate: [0, 1, -15] },
   { nextPlate: [7, 0, -8], prevPlate: [0, 0, -15] },
   { nextPlate: [3, 0, 2], prevPlate: [0, 0, -15] },
   { nextPlate: [3, 0, 2], prevPlate: [0, 0, -15] },
@@ -10,7 +10,8 @@ const plateDictionary = [
 let useSceneStore = create((set) => ({
   scene: 0,
   nextPlatePos: plateDictionary[0]["nextPlate"],
-  nextDoorOpen: false,
+  nextPlateState: false,
+  nextDoorState: false,
   prevPlatePos: plateDictionary[0]["prevPlate"],
 
   next: (sceneIndex) =>
@@ -25,9 +26,13 @@ let useSceneStore = create((set) => ({
       nextPlatePos: plateDictionary[sceneIndex]["nextPlate"],
       prevPlatePos: plateDictionary[sceneIndex]["prevPlate"],
     })),
-  toggleNext: (_isOpen) =>
+  toggleNextPlate: (_isActive) =>
     set((state) => ({
-      nextDoorOpen: _isOpen,
+      nextPlateState: _isActive,
+    })),
+  toggleNextDoor: (_isOpen) =>
+    set((state) => ({
+      nextDoorState: _isOpen,
     })),
 }));
 

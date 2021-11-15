@@ -55,8 +55,9 @@ export default function Model({ ...props }) {
         doorStore.prev(doorStore.scene - 1);
       }
 
-      visit === nextDoor.current.uuid && doorStore.toggleNext(true);
+      visit === nextDoor.current.uuid && doorStore.toggleNextPlate(true);
     }
+    doorStore.nextPlateState && doorStore.toggleNextPlate(false);
   }, [visit]);
 
   useFrame((state, delta) => {
