@@ -30,6 +30,7 @@ export default function Model({ ...props }) {
   let raycaster;
   const prev = useRef(null);
   const next = useRef(null);
+  const nextDoor = useRef(null);
 
   let onObject = [];
 
@@ -48,6 +49,7 @@ export default function Model({ ...props }) {
     if (visit) {
       visit === next.current.uuid && sceneStore.next(sceneStore.scene + 1);
       visit === prev.current.uuid && sceneStore.prev(sceneStore.scene - 1);
+      visit === nextDoor.current.uuid && sceneStore.toggleNext(true);
     }
   }, [visit]);
 
@@ -55,6 +57,7 @@ export default function Model({ ...props }) {
     // Adding all the plates ref to an array which will be used to check intersection of raycaster with plates.
     !objects.includes(next.current) && objects.push(next.current);
     !objects.includes(prev.current) && objects.push(prev.current);
+    !objects.includes(nextDoor.current) && objects.push(nextDoor.current);
 
     // Moving raycaster around with change of camera location
     raycaster.ray.origin.copy(group.current.position);
@@ -154,6 +157,18 @@ export default function Model({ ...props }) {
         position={sceneStore.prevPos}
         rotation={[-Math.PI / 2, 0, 0]}
         ref={prev}
+      >
+        <planeBufferGeometry args={[2, 2]} />
+        <meshStandardMaterial
+          attach="material"
+          color={0xff0000}
+          roughness={1}
+        />
+      </mesh>
+      <mesh
+        position={sceneStore.nextDoorPos}
+        rotation={[-Math.PI / 2, 0, 0]}
+        ref={nextDoor}
       >
         <planeBufferGeometry args={[2, 2]} />
         <meshStandardMaterial

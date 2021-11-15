@@ -7,7 +7,7 @@ import FutureBed from "../components/FutureBed";
 import VendingMachine from "../components/VendingMachine";
 import Galaxy from "../components/Galaxy";
 import Djbooth from "../components/Djbooth";
-import { DillaPoster, CavsPoster } from "../components/Posters";
+import { DillaPoster, CavsPoster, SkillsDoor } from "../components/Posters";
 import Door4 from "../components/Door4";
 function Loader() {
   const { progress } = useProgress();
@@ -44,7 +44,12 @@ function AboutMe() {
         scale={[0.9, 0.9, 0.9]}
         rotation={[0, 1, 0]}
       />
-      <Door4 position={[0, 0, 21]} scale={[1, 1, 1]} rotation={[0, 0, 0]} />
+      <Door4
+        position={[1.6, -0.2, 24]}
+        scale={[0.4, 1.7, 1]}
+        rotation={[0, 0.1, 0]}
+      />
+      <SkillsDoor />
       <Djbooth
         position={[21, -1, 16]}
         scale={[1.2, 1.2, 1.2]}

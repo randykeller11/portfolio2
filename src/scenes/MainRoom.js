@@ -2,6 +2,7 @@ import React, { Suspense, useEffect, useState } from "react";
 import { Sky, useProgress, Html, useGLTF } from "@react-three/drei";
 import Avatar5 from "../components/Avatar5";
 import Office from "../components/Office";
+import Door4 from "../components/Door4";
 
 function Loader() {
   const { progress } = useProgress();
