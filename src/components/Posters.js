@@ -3,6 +3,7 @@ import * as THREE from "three";
 
 import dilla from "../images/jayDee2.png";
 import cavs from "../images/cavs.jpg";
+import skillsDoor from "../images/skillsDoor.png";
 
 import { useLoader } from "@react-three/fiber";
 
@@ -27,6 +28,16 @@ export function CavsPoster() {
       scale={[2.2, 1.2, 1]}
       rotation={[0, 3.22, 0]}
     >
+      <planeBufferGeometry attach="geometry" args={[3, 3]} />
+      <meshBasicMaterial attach="material" map={texture} />
+    </mesh>
+  );
+}
+
+export function SkillsDoor() {
+  const texture = useLoader(THREE.TextureLoader, skillsDoor);
+  return (
+    <mesh position={[1.5, 2, 24]} scale={[1, 1.4, 1]} rotation={[0, 3.2, 0]}>
       <planeBufferGeometry attach="geometry" args={[3, 3]} />
       <meshBasicMaterial attach="material" map={texture} />
     </mesh>
