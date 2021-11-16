@@ -18,28 +18,37 @@ function Loader() {
 
 export default function Car() {
   return (
-    <Canvas dpr={[1, 1.5]} shadows camera={{ position: [0, 5, 15], fov: 50 }}>
-      <ambientLight intensity={0.9} />
-      <Sky />
-      <Office scale={[5, 5, 5]} position={[-30, 0.05, 60]} />
-      <Physics
-        broadphase="SAP"
-        contactEquationRelaxation={4}
-        friction={1e-3}
-        allowSleep
-      >
-        <Plane rotation={[-Math.PI / 2, 0, 0]} userData={{ id: "floor" }} />
-        <Vehicle
-          position={[0, 2, 0]}
-          rotation={[0, -Math.PI / 4, 0]}
-          angularVelocity={[0, 0.5, 0]}
-          wheelRadius={0.3}
+    <Suspense fallback={Loader}>
+      <Canvas dpr={[1, 1.5]} shadows camera={{ position: [0, 5, 15], fov: 50 }}>
+        <ambientLight intensity={0.9} />
+        <Sky />
+        <Office
+          scale={[3, 3, 3]}
+          position={[30, 0.05, -10]}
+          rotation={[0, 2.5, 0]}
         />
-        <Pillar position={[-2, 2.5, 10]} userData={{ id: "pillar-1" }} />
-        <Pillar position={[-12, 2.5, 20]} userData={{ id: "pillar-2" }} />
-        <Pillar position={[-13, 2.5, 30]} userData={{ id: "pillar-3" }} />
-      </Physics>
-    </Canvas>
+        <Physics
+          broadphase="SAP"
+          contactEquationRelaxation={4}
+          friction={1e-3}
+          allowSleep
+        >
+          <Plane rotation={[-Math.PI / 2, 0, 0]} userData={{ id: "floor" }} />
+          <Vehicle
+            position={[0, 2, 0]}
+            rotation={[0, -Math.PI / 4, 0]}
+            angularVelocity={[0, 0.5, 0]}
+            wheelRadius={0.3}
+          />
+          <Pillar position={[-2, 2.5, 10]} userData={{ id: "pillar-1" }} />
+          <Pillar position={[-12, 2.5, 20]} userData={{ id: "pillar-2" }} />
+          <Pillar position={[-13, 2.5, 30]} userData={{ id: "pillar-3" }} />
+          <Pillar position={[-2, 2.5, -5]} userData={{ id: "pillar-4" }} />
+          <Pillar position={[-5, 2.5, -10]} userData={{ id: "pillar-5" }} />
+          <Pillar position={[-10, 2.5, -15]} userData={{ id: "pillar-6" }} />
+        </Physics>
+      </Canvas>
+    </Suspense>
   );
 }
 
