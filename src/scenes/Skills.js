@@ -59,7 +59,7 @@ function Skills() {
       />
       <SkillIcon
         icon={icons[3]}
-        position={[-9.5, 2.2, 10]}
+        position={[-9.1, 2.2, 10]}
         scale={[3.5, 2.5, 1]}
       />
       <SkillIcon
