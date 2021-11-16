@@ -8,10 +8,10 @@ const plateDictionary = [
 ];
 
 let useSceneStore = create((set) => ({
-  scene: 2,
-  nextPos: plateDictionary[2]["next"],
+  scene: 0,
+  nextPos: plateDictionary[0]["next"],
 
-  prevPos: plateDictionary[2]["prev"],
+  prevPos: plateDictionary[0]["prev"],
 
   next: (sceneIndex) =>
     set((state) => ({
