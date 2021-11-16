@@ -1,11 +1,19 @@
 .gui {
   position: absolute;
   z-index: 2;
-  right: 20vw;
+  right: 35vw;
   top: 80vh;
   height: 16vh;
-  width: 60vw;
+  width: 40vw;
   display: flex;
   border-radius: 30px;
   border: 2px solid darkblue;
+  background-color: rgba(148, 168, 198, 0.5);
+}
+
+.gui > img {
+  height: 90%;
+  border-radius: 30px;
+  padding-top: 7px;
+  padding-left: 7px;
 }

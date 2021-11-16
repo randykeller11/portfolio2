@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./Gui.css";
+import headshot from "../images/headshot.png";
 
 function Gui() {
   return (
     <div className="gui">
-      <h1>test!</h1>
+      <img src={headshot} />
     </div>
   );
 }
