@@ -9,6 +9,7 @@ import {
   Html,
 } from "@react-three/drei";
 import Vehicle from "../components/Vehicle";
+import Office from "../components/Office";
 
 function Loader() {
   const { progress } = useProgress();
@@ -18,10 +19,9 @@ function Loader() {
 export default function Car() {
   return (
     <Canvas dpr={[1, 1.5]} shadows camera={{ position: [0, 5, 15], fov: 50 }}>
-      <fog attach="fog" args={["#171720", 10, 50]} />
-      <color attach="background" args={["#171720"]} />
       <ambientLight intensity={0.9} />
       <Sky />
+      <Office scale={[5, 5, 5]} position={[-30, 0.05, 60]} />
       <Physics
         broadphase="SAP"
         contactEquationRelaxation={4}
