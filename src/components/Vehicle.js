@@ -2,12 +2,12 @@ import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useRaycastVehicle } from "@react-three/cannon";
 import { useControls } from "../hooks/useControls";
-import Beetle from "./Beetle";
+import Lambo from "./Lambo";
 import Wheel from "./Wheel";
 
 function Vehicle({
-  radius = 0.7,
-  width = 1.2,
+  radius = 1,
+  width = 3,
   height = -0.04,
   front = 1.3,
   back = -1.15,
@@ -91,12 +91,14 @@ function Vehicle({
   });
 
   return (
-    <group ref={vehicle} position={[0, -0.4, 0]}>
-      <Beetle
+    <group ref={vehicle} position={[0, -1.5, 0]}>
+      <Lambo
         ref={chassis}
         rotation={props.rotation}
         position={props.position}
         angularVelocity={props.angularVelocity}
+        rotation={[0, 1.6, 0]}
+        scale={[0.4, 0.4, 0.4]}
       />
       <Wheel ref={wheel1} radius={radius} leftSide />
       <Wheel ref={wheel2} radius={radius} />
