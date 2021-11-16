@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useRaycastVehicle } from "@react-three/cannon";
 import { useControls } from "../hooks/useControls";
+import * as THREE from "three";
 import Beetle from "./Beetle";
 import Wheel from "./Wheel";
 
@@ -69,7 +70,8 @@ function Vehicle({
     indexUpAxis: 1,
   }));
 
-  useFrame(() => {
+  useFrame((state) => {
+    //handle controls
     const { forward, backward, left, right, brake, reset } = controls.current;
     for (let e = 2; e < 4; e++)
       api.applyEngineForce(
@@ -88,6 +90,21 @@ function Vehicle({
       chassis.current.api.angularVelocity.set(0, 0.5, 0);
       chassis.current.api.rotation.set(0, -Math.PI / 4, 0);
     }
+    //move camera
+    const relativeCameraOffset = new THREE.Vector3(-0.6, 1.9, -8);
+    const thirdPersonTarget = new THREE.Vector3(0, 2.1, 5);
+
+    var cameraOffset = relativeCameraOffset.applyMatrix4(
+      chassis.current.matrixWorld
+    );
+    var targetOffset = thirdPersonTarget.applyMatrix4(
+      chassis.current.matrixWorld
+    );
+
+    state.camera.position.x = cameraOffset.x;
+    state.camera.position.y = cameraOffset.y;
+    state.camera.position.z = cameraOffset.z;
+    state.camera.lookAt(targetOffset);
   });
 
   return (
