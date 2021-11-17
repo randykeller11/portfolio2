@@ -6,11 +6,8 @@ import Door4 from "../components/Door4";
 import PrevDoor from "../components/PrevDoor";
 import SkillIcon from "../components/SkillIcon";
 import Avatar5 from "../components/Avatar5";
-
-function Loader() {
-  const { progress } = useProgress();
-  return <Html center>{progress} % loaded</Html>;
-}
+import useSceneStore from "../stores/useSceneStore";
+import Loader from "../components/Loader";
 
 function Skills() {
   const icons = useTexture([
@@ -26,6 +23,8 @@ function Skills() {
     "/assets/blender.png",
     "/assets/mixamo.png",
   ]);
+  const sceneStore = useSceneStore();
+
   return (
     <Suspense fallback={<Loader />}>
       <ambientLight intensity={0.9} />
@@ -36,11 +35,7 @@ function Skills() {
         distance={450000}
       />
       <PortAv1 />
-      <Avatar5
-        position={[1.5, 0, 2]}
-        scale={[1.1, 1.1, 1.1]}
-        rotation={[0, Math.PI / 1, 0]}
-      />
+      {sceneStore.isLocked[sceneStore.scene] && <Avatar5 />}
       <Gallery
         position={[1.5, -0.001, -3]}
         scale={[2, 2, 2]}

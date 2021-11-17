@@ -3,6 +3,8 @@ import * as THREE from "three";
 
 import dilla from "../images/jayDee2.png";
 import cavs from "../images/cavs.jpg";
+import aboutMe from "../images/aboutMe.png";
+
 import skillsDoor from "../images/skillsDoor.png";
 
 import { useLoader } from "@react-three/fiber";
@@ -27,6 +29,20 @@ export function CavsPoster() {
       position={[13.5, 3.6, 28.9]}
       scale={[2.2, 1.2, 1]}
       rotation={[0, 3.22, 0]}
+    >
+      <planeBufferGeometry attach="geometry" args={[3, 3]} />
+      <meshBasicMaterial attach="material" map={texture} />
+    </mesh>
+  );
+}
+
+export function AboutMeInfo() {
+  const texture = useLoader(THREE.TextureLoader, aboutMe);
+  return (
+    <mesh
+      position={[-4.9, 3, 15.35]}
+      scale={[4.3, 2.1, 1]}
+      rotation={[0, 1.65, 0]}
     >
       <planeBufferGeometry attach="geometry" args={[3, 3]} />
       <meshBasicMaterial attach="material" map={texture} />

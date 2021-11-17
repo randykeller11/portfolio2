@@ -7,22 +7,27 @@ import FutureBed from "../components/FutureBed";
 import VendingMachine from "../components/VendingMachine";
 import Galaxy from "../components/Galaxy";
 import Djbooth from "../components/Djbooth";
-import { DillaPoster, CavsPoster, SkillsDoor } from "../components/Posters";
+import {
+  DillaPoster,
+  CavsPoster,
+  SkillsDoor,
+  AboutMeInfo,
+} from "../components/Posters";
 import Door4 from "../components/Door4";
 import Avatar5 from "../components/Avatar5";
+import useSceneStore from "../stores/useSceneStore";
+import Loader from "../components/Loader";
 
-function Loader() {
-  const { progress } = useProgress();
-  return <Html center>{progress} % loaded</Html>;
-}
 function AboutMe() {
+  const sceneStore = useSceneStore();
+
   return (
     <Suspense fallback={<Loader />}>
       <ambientLight intensity={0.9} />
 
       <Sky />
       <PortAv1 />
-      <Avatar5 />
+      {sceneStore.isLocked[sceneStore.scene] && <Avatar5 />}
       <Galaxy position={[3, 9, 10]} scale={[2, 1.2, 2]} />
       <Coolroom3
         position={[-1.5, -0.25, -3]}
@@ -32,6 +37,7 @@ function AboutMe() {
 
       <DillaPoster />
       <CavsPoster />
+      <AboutMeInfo />
       <Stereo
         position={[10, 0, -4.85]}
         scale={[0.4, 0.4, 0.4]}
