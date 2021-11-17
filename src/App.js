@@ -7,6 +7,7 @@ import useSceneStore from "./stores/useSceneStore";
 import Skills from "./scenes/Skills";
 import Car from "./scenes/Car";
 import Gui from "./components/Gui";
+import github from "./images/github2.png";
 
 function App() {
   const sceneStore = useSceneStore();
@@ -27,6 +28,11 @@ function App() {
         {sceneStore.scene === 2 && <Car />}
       </Suspense>
       <Gui />
+      <div className="github">
+        <a href="https://github.com/randykeller11/portfolio2">
+          <img src={github} />
+        </a>
+      </div>
     </div>
   );
 }

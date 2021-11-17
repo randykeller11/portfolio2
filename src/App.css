@@ -9,3 +9,20 @@
   z-index: 1;
   position: relative;
 }
+
+.github {
+  position: absolute;
+  z-index: 2;
+  left: 2vw;
+  bottom: 1vh;
+  height: 10vh;
+  width: 10vw;
+}
+
+.github > a > img {
+  height: 5vh;
+  width: 5vw;
+}
+.github > img:hover {
+  cursor: pointer;
+}
