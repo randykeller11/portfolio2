@@ -1,10 +1,11 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { Sky, useProgress, Html, useTexture } from "@react-three/drei";
-import Avatar5 from "../components/Avatar5";
+import PortAv1 from "../components/PortAv1";
 import Gallery from "../components/Gallery";
 import Door4 from "../components/Door4";
 import PrevDoor from "../components/PrevDoor";
 import SkillIcon from "../components/SkillIcon";
+import Avatar5 from "../components/Avatar5";
 
 function Loader() {
   const { progress } = useProgress();
@@ -34,7 +35,12 @@ function Skills() {
         azimuth={0.25}
         distance={450000}
       />
-      <Avatar5 />
+      <PortAv1 />
+      <Avatar5
+        position={[1.5, 0, 2]}
+        scale={[1.1, 1.1, 1.1]}
+        rotation={[0, Math.PI / 1, 0]}
+      />
       <Gallery
         position={[1.5, -0.001, -3]}
         scale={[2, 2, 2]}
