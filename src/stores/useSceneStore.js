@@ -8,13 +8,17 @@ const plateDictionary = [
 ];
 
 let useSceneStore = create((set) => ({
+  avatar: 1,
   scene: 0,
   isLocked: [true, true, true],
   isLoaded: false,
   nextPos: plateDictionary[0]["next"],
 
   prevPos: plateDictionary[0]["prev"],
-
+  setAvatar: (selection) =>
+    set((state) => ({
+      avatar: selection,
+    })),
   next: (sceneIndex) =>
     set((state) => ({
       scene: (state.scene = state.scene + 1),
