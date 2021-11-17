@@ -27,7 +27,14 @@ function App() {
 
         {sceneStore.scene === 2 && <Car />}
       </Suspense>
-      <Gui />
+      {sceneStore.isLocked[sceneStore.scene] &&
+        sceneStore.isLoaded &&
+        sceneStore.scene < 2 && <Gui />}
+
+      {sceneStore.scene === 2 && sceneStore.isLocked[sceneStore.scene] && (
+        <Gui />
+      )}
+
       <div className="github">
         <a href="https://github.com/randykeller11/portfolio2">
           <img src={github} />

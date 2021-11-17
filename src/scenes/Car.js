@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Sky } from "@react-three/drei";
 import { Physics, useCylinder, usePlane } from "@react-three/cannon";
@@ -10,15 +10,11 @@ import {
 } from "@react-three/drei";
 import Vehicle from "../components/Vehicle";
 import Office from "../components/Office";
-
-function Loader() {
-  const { progress } = useProgress();
-  return <Html center>{progress} % loaded</Html>;
-}
+import Loader from "../components/Loader";
 
 export default function Car() {
   return (
-    <Suspense fallback={Loader}>
+    <Suspense fallback={<Loader />}>
       <Canvas dpr={[1, 1.5]} shadows camera={{ position: [0, 5, 15], fov: 50 }}>
         <ambientLight intensity={0.9} />
         <Sky />
@@ -43,7 +39,7 @@ export default function Car() {
           <Pillar position={[-2, 2.5, 10]} userData={{ id: "pillar-1" }} />
           <Pillar position={[-12, 2.5, 20]} userData={{ id: "pillar-2" }} />
           <Pillar position={[-13, 2.5, 30]} userData={{ id: "pillar-3" }} />
-          <Pillar position={[-2, 2.5, -5]} userData={{ id: "pillar-4" }} />
+          <Pillar position={[-2, 2.5, -7]} userData={{ id: "pillar-4" }} />
           <Pillar position={[-5, 2.5, -10]} userData={{ id: "pillar-5" }} />
           <Pillar position={[-10, 2.5, -15]} userData={{ id: "pillar-6" }} />
         </Physics>

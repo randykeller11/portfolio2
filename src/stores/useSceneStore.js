@@ -9,6 +9,8 @@ const plateDictionary = [
 
 let useSceneStore = create((set) => ({
   scene: 0,
+  isLocked: [true, true, true],
+  isLoaded: false,
   nextPos: plateDictionary[0]["next"],
 
   prevPos: plateDictionary[0]["prev"],
@@ -18,12 +20,22 @@ let useSceneStore = create((set) => ({
       scene: (state.scene = state.scene + 1),
       nextPos: plateDictionary[sceneIndex]["next"],
       prevPos: plateDictionary[sceneIndex]["prev"],
+      isLoaded: false,
     })),
   prev: (sceneIndex) =>
     set((state) => ({
       scene: (state.scene = state.scene - 1),
       nextPos: plateDictionary[sceneIndex]["next"],
       prevPos: plateDictionary[sceneIndex]["prev"],
+      isLoaded: false,
+    })),
+  toggleLock: (newState) =>
+    set((state) => ({
+      isLocked: newState,
+    })),
+  toggleLoaded: (newState) =>
+    set((state) => ({
+      isLoaded: newState,
     })),
 }));
 
