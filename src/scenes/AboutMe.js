@@ -76,8 +76,8 @@ function AboutMe() {
 
       <SkillsDoor />
       <Djbooth
-        position={[21, -1, 16]}
-        scale={[1.2, 1.2, 1.2]}
+        position={[21.48, -1, 16.05]}
+        scale={[1.35, 1.35, 1.35]}
         rotation={[0, -0.8, 0]}
       />
     </Suspense>
