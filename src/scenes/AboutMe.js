@@ -7,6 +7,9 @@ import FutureBed from "../components/FutureBed";
 import VendingMachine from "../components/VendingMachine";
 import Galaxy from "../components/Galaxy";
 import Djbooth from "../components/Djbooth";
+import GolfClock from "../components/GolfClock";
+import Guitar from "../components/Guitar";
+
 import {
   DillaPoster,
   CavsPoster,
@@ -42,6 +45,18 @@ function AboutMe() {
         position={[10, 0, -4.85]}
         scale={[0.4, 0.4, 0.4]}
         rotation={[0, -1.4, 0]}
+      />
+
+      <GolfClock
+        position={[12.3, 3.2, 13.5]}
+        scale={[5, 5, 5]}
+        rotation={[0, -1.5, 0]}
+      />
+
+      <Guitar
+        position={[17.2, 1.5, 16.1]}
+        scale={[0.5, 0.5, 0.5]}
+        rotation={[0, 0, 1.55]}
       />
       <FutureBed
         position={[13, 0, 27]}

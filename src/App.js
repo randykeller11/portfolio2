@@ -30,23 +30,16 @@ function App() {
       {sceneStore.isLocked[sceneStore.scene] &&
         sceneStore.isLoaded &&
         sceneStore.scene < 2 && <Gui />}
-      {sceneStore.isLoaded && (
-        <div className="github">
-          <a href="https://github.com/randykeller11/portfolio2">
-            <img src={github} />
-          </a>
-        </div>
-      )}
+
       {sceneStore.scene === 2 && sceneStore.isLocked[sceneStore.scene] && (
         <Gui />
       )}
-      {sceneStore.scene === 2 && (
-        <div className="github">
-          <a href="https://github.com/randykeller11/portfolio2">
-            <img src={github} />
-          </a>
-        </div>
-      )}
+
+      <div className="github">
+        <a href="https://github.com/randykeller11/portfolio2">
+          <img src={github} />
+        </a>
+      </div>
     </div>
   );
 }

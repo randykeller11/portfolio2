@@ -40,7 +40,7 @@ export function AboutMeInfo() {
   const texture = useLoader(THREE.TextureLoader, aboutMe);
   return (
     <mesh
-      position={[-4.9, 3, 15.35]}
+      position={[-5, 2.91, 14.37]}
       scale={[4.3, 2.1, 1]}
       rotation={[0, 1.65, 0]}
     >
