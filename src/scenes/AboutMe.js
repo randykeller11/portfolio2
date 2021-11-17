@@ -1,6 +1,11 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { Sky, useProgress, Html, useGLTF } from "@react-three/drei";
+import PortAv0 from "../components/PortAv0";
 import PortAv1 from "../components/PortAv1";
+import PortAv2 from "../components/PortAv2";
+import PortAv3 from "../components/PortAv3";
+import PortAv4 from "../components/PortAv4";
+import PortAv5 from "../components/PortAv5";
 import Coolroom3 from "../components/Coolroom3";
 import Stereo from "../components/Stereo";
 import FutureBed from "../components/FutureBed";
@@ -29,7 +34,12 @@ function AboutMe() {
       <ambientLight intensity={0.9} />
 
       <Sky />
-      <PortAv1 />
+      {sceneStore.avatar === 0 && <PortAv0 />}
+      {sceneStore.avatar === 1 && <PortAv1 />}
+      {sceneStore.avatar === 2 && <PortAv2 />}
+      {sceneStore.avatar === 3 && <PortAv3 />}
+      {sceneStore.avatar === 4 && <PortAv4 />}
+      {sceneStore.avatar === 5 && <PortAv5 />}
       {sceneStore.isLocked[sceneStore.scene] && <Avatar5 />}
       <Galaxy position={[3, 9, 10]} scale={[2, 1.2, 2]} />
       <Coolroom3
