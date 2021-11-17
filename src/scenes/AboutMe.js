@@ -1,6 +1,6 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { Sky, useProgress, Html, useGLTF } from "@react-three/drei";
-import Avatar5 from "../components/Avatar5";
+import PortAv1 from "../components/PortAv1";
 import Coolroom3 from "../components/Coolroom3";
 import Stereo from "../components/Stereo";
 import FutureBed from "../components/FutureBed";
@@ -9,6 +9,7 @@ import Galaxy from "../components/Galaxy";
 import Djbooth from "../components/Djbooth";
 import { DillaPoster, CavsPoster, SkillsDoor } from "../components/Posters";
 import Door4 from "../components/Door4";
+import Avatar5 from "../components/Avatar5";
 
 function Loader() {
   const { progress } = useProgress();
@@ -20,6 +21,7 @@ function AboutMe() {
       <ambientLight intensity={0.9} />
 
       <Sky />
+      <PortAv1 />
       <Avatar5 />
       <Galaxy position={[3, 9, 10]} scale={[2, 1.2, 2]} />
       <Coolroom3
