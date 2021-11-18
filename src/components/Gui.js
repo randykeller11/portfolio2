@@ -5,7 +5,7 @@ import useSceneStore from "../stores/useSceneStore";
 
 function Gui() {
   let sceneStore = useSceneStore();
-  let guiCSS = sceneStore.scene === 2 ? "guiCar" : "gui";
+  let guiCSS = sceneStore.scene === 3 ? "guiCar" : "gui";
 
   return (
     <div className={guiCSS}>
@@ -20,7 +20,7 @@ function Gui() {
         >
           x
         </h2>
-        {sceneStore.scene === 0 && (
+        {sceneStore.scene === 1 && (
           <h3>
             Hi I'm Randy. Welcome to my portfolio website! You can walk around
             with the AWD keys on your keyboard. This is my digital home office
@@ -29,7 +29,7 @@ function Gui() {
             behind me.
           </h3>
         )}
-        {sceneStore.scene === 1 && (
+        {sceneStore.scene === 2 && (
           <h3>
             Welcome to the skills section! Most of the technologies in this room
             were used to make this site. The next room contains a physics demo
@@ -37,14 +37,14 @@ function Gui() {
             builder app called XRSandbox. The link is on the wall behind you!
           </h3>
         )}
-        {sceneStore.scene === 2 && (
-          <h3>
-            You made it to the physics demo! This is my rework of the canon.js
+        {sceneStore.scene === 3 && (
+          <h4>
+            You made it to the physics demo! This is my rework of the cannon.js
             car example. Use WASD to drive the car. I added a first person
             camera and some simple models to make the driving experience more
             interesting. Click the reset button to start over and press exit in
             the top left to return to the skills section.
-          </h3>
+          </h4>
         )}
       </div>
     </div>

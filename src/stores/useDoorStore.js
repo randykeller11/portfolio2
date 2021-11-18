@@ -7,7 +7,7 @@ const plateDictionary = [
   { nextPlate: [3, 0, 2], prevPlate: [0, 0, -15] },
 ];
 
-let useSceneStore = create((set) => ({
+let useDoorStore = create((set) => ({
   scene: 0,
   nextPlatePos: plateDictionary[0]["nextPlate"],
   nextPlateState: false,
@@ -42,4 +42,4 @@ let useSceneStore = create((set) => ({
     })),
 }));
 
-export default useSceneStore;
+export default useDoorStore;

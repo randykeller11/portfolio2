@@ -34,13 +34,15 @@ function AboutMe() {
       <ambientLight intensity={0.9} />
 
       <Sky />
-      {sceneStore.avatar === 0 && <PortAv0 />}
-      {sceneStore.avatar === 1 && <PortAv1 />}
-      {sceneStore.avatar === 2 && <PortAv2 />}
-      {sceneStore.avatar === 3 && <PortAv3 />}
-      {sceneStore.avatar === 4 && <PortAv4 />}
-      {sceneStore.avatar === 5 && <PortAv5 />}
-      {sceneStore.isLocked[sceneStore.scene] && <Avatar5 />}
+      {sceneStore.scene > 0 && sceneStore.avatar === 0 && <PortAv0 />}
+      {sceneStore.scene > 0 && sceneStore.avatar === 1 && <PortAv1 />}
+      {sceneStore.scene > 0 && sceneStore.avatar === 2 && <PortAv2 />}
+      {sceneStore.scene > 0 && sceneStore.avatar === 3 && <PortAv3 />}
+      {sceneStore.scene > 0 && sceneStore.avatar === 4 && <PortAv4 />}
+      {sceneStore.scene > 0 && sceneStore.avatar === 5 && <PortAv5 />}
+      {sceneStore.scene > 0 && sceneStore.isLocked[sceneStore.scene] && (
+        <Avatar5 />
+      )}
       <Galaxy position={[3, 9, 10]} scale={[2, 1.2, 2]} />
       <Coolroom3
         position={[-1.5, -0.25, -3]}
