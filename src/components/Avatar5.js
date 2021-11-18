@@ -15,14 +15,14 @@ export default function Model({ ...props }) {
   const sceneStore = useSceneStore();
   useEffect(() => {
     actions["idle"].play();
-    if (sceneStore.scene === 0) {
+    if (sceneStore.scene === 1) {
       group.current.position.x = -0.5;
       group.current.position.z = 3.5;
       group.current.scale.y = 1.1;
       group.current.scale.x = 1.1;
       group.current.rotation.y = 3.1;
     }
-    if (sceneStore.scene === 1) {
+    if (sceneStore.scene === 2) {
       group.current.position.x = 1;
       group.current.position.z = 2.5;
       group.current.scale.y = 1.1;

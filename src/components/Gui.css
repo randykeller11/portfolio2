@@ -55,3 +55,8 @@
   margin-left: 0.2vw;
   /* border: 2px solid darkblue; */
 }
+
+.body > h4 {
+  padding-left: 2%;
+  padding-right: 2%;
+}

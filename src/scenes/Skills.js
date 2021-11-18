@@ -1,6 +1,11 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { Sky, useProgress, Html, useTexture } from "@react-three/drei";
+import PortAv0 from "../components/PortAv0";
 import PortAv1 from "../components/PortAv1";
+import PortAv2 from "../components/PortAv2";
+import PortAv3 from "../components/PortAv3";
+import PortAv4 from "../components/PortAv4";
+import PortAv5 from "../components/PortAv5";
 import Gallery from "../components/Gallery";
 import Door4 from "../components/Door4";
 import PrevDoor from "../components/PrevDoor";
@@ -34,7 +39,12 @@ function Skills() {
         azimuth={0.25}
         distance={450000}
       />
-      <PortAv1 />
+      {sceneStore.avatar === 0 && <PortAv0 />}
+      {sceneStore.avatar === 1 && <PortAv1 />}
+      {sceneStore.avatar === 2 && <PortAv2 />}
+      {sceneStore.avatar === 3 && <PortAv3 />}
+      {sceneStore.avatar === 4 && <PortAv4 />}
+      {sceneStore.avatar === 5 && <PortAv5 />}
       {sceneStore.isLocked[sceneStore.scene] && <Avatar5 />}
       <Gallery
         position={[1.5, -0.001, -3]}
