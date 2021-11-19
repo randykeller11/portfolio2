@@ -13,6 +13,7 @@ import SkillIcon from "../components/SkillIcon";
 import Avatar5 from "../components/Avatar5";
 import useSceneStore from "../stores/useSceneStore";
 import Loader from "../components/Loader";
+import { SkillsSign } from "../components/Posters";
 
 function Skills() {
   const icons = useTexture([
@@ -51,8 +52,8 @@ function Skills() {
         scale={[2, 2, 2]}
         rotation={[0, -1.6, 0]}
       />
-      <Door4 position={[7, -0.1, -9.5]} scale={[0.4, 1.7, 1]} />
-      <PrevDoor position={[-4, -0.1, -9.5]} scale={[0.4, 1.7, 1]} />
+      <Door4 position={[9, -0.1, -9.5]} scale={[0.4, 1.7, 1]} />
+      <PrevDoor position={[-6, -0.1, -9.5]} scale={[0.4, 1.7, 1]} />
       <SkillIcon
         icon={icons[0]}
         position={[0.5, 2.7, 16]}
@@ -90,7 +91,7 @@ function Skills() {
       />
       <SkillIcon
         icon={icons[7]}
-        position={[10.5, 2.4, 1.3]}
+        position={[10.5, 2.4, 1.6]}
         scale={[2.5, 2, 1]}
       />
       <SkillIcon
@@ -108,6 +109,7 @@ function Skills() {
         position={[-9, 2.4, -3.5]}
         scale={[4, 2.8, 1]}
       />
+      <SkillsSign />
     </Suspense>
   );
 }
