@@ -40,6 +40,15 @@ let useDoorStore = create((set) => ({
     set((state) => ({
       prevPlateState: _isActive,
     })),
+  carExit: () =>
+    set((state) => ({
+      scene: 1,
+      nextPlatePos: plateDictionary[1]["nextPlate"],
+      nextPlateState: false,
+      prevPlatePos: plateDictionary[1]["prevPlate"],
+
+      prevPlateState: false,
+    })),
 }));
 
 export default useDoorStore;
