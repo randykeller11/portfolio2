@@ -26,3 +26,26 @@
 .github > img:hover {
   cursor: pointer;
 }
+
+.navigation {
+  position: absolute;
+  z-index: 2;
+  top: 2vh;
+  left: 8vw;
+  width: 80vw;
+  display: flex;
+  justify-content: space-between;
+}
+.navigation > h1 {
+  border: 2px solid orange;
+  border-radius: 10%;
+  color: orange;
+  padding: 0.25em;
+}
+.navigation > h1:hover {
+  cursor: pointer;
+  border: 2px solid orange;
+  border-radius: 10%;
+  background-color: orange;
+  color: black;
+}

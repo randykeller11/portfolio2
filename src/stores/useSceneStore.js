@@ -46,6 +46,18 @@ let useSceneStore = create((set) => ({
     set((state) => ({
       isLoaded: newState,
     })),
+  carReset: (newState) =>
+    set((state) => ({
+      scene: newState,
+      isLoaded: false,
+    })),
+  carExit: () =>
+    set((state) => ({
+      scene: 2,
+      nextPos: plateDictionary[2]["next"],
+      prevPos: plateDictionary[2]["prev"],
+      isLoaded: false,
+    })),
 }));
 
 export default useSceneStore;
