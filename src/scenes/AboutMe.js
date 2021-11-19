@@ -8,7 +8,8 @@ import PortAv4 from "../components/PortAv4";
 import PortAv5 from "../components/PortAv5";
 import Coolroom3 from "../components/Coolroom3";
 import Stereo from "../components/Stereo";
-import FutureBed from "../components/FutureBed";
+import Hoop from "../components/Hoop";
+import Basketball from "../components/Basketball";
 import VendingMachine from "../components/VendingMachine";
 import Galaxy from "../components/Galaxy";
 import Djbooth from "../components/Djbooth";
@@ -70,10 +71,15 @@ function AboutMe() {
         scale={[0.5, 0.5, 0.5]}
         rotation={[0, 0, 1.55]}
       />
-      <FutureBed
-        position={[13, 0, 27]}
-        scale={[0.5, 0.5, 0.5]}
-        rotation={[0, 1.68, 0]}
+      <Hoop
+        position={[-5.8, 3, 36.5]}
+        scale={[3, 3, 2]}
+        rotation={[0, 1.6, 0]}
+      />
+      <Basketball
+        position={[9.5, 0.2, 28.5]}
+        scale={[0.6, 0.6, 0.6]}
+        rotation={[0, 0, 0.7]}
       />
       <VendingMachine
         position={[-3.2, 0, 23]}

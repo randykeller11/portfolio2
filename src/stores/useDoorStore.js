@@ -2,7 +2,7 @@ import create from "zustand";
 
 const plateDictionary = [
   { nextPlate: [1.4, -1, 23], prevPlate: [0, 1, -15] },
-  { nextPlate: [7, -1, -8.7], prevPlate: [-4, -1, -8.7] },
+  { nextPlate: [9, -1, -8.7], prevPlate: [-6, -1, -8.7] },
   { nextPlate: [3, 0, 2], prevPlate: [0, 0, -15] },
   { nextPlate: [3, 0, 2], prevPlate: [0, 0, -15] },
 ];

@@ -3,9 +3,10 @@ import * as THREE from "three";
 
 import dilla from "../images/jayDee2.png";
 import cavs from "../images/cavs.jpg";
-import aboutMe from "../images/aboutMe.png";
-
+import aboutMe from "../images/aboutMe2.png";
 import skillsDoor from "../images/skillsDoor.png";
+
+import skillsSign from "../images/skillsSign2.png";
 
 import { useLoader } from "@react-three/fiber";
 
@@ -40,9 +41,23 @@ export function AboutMeInfo() {
   const texture = useLoader(THREE.TextureLoader, aboutMe);
   return (
     <mesh
-      position={[-5, 2.91, 14.37]}
-      scale={[4.3, 2.1, 1]}
+      position={[-5, 2.91, 14.9]}
+      scale={[4.7, 2.1, 1]}
       rotation={[0, 1.65, 0]}
+    >
+      <planeBufferGeometry attach="geometry" args={[3, 3]} />
+      <meshBasicMaterial attach="material" map={texture} />
+    </mesh>
+  );
+}
+
+export function SkillsSign() {
+  const texture = useLoader(THREE.TextureLoader, skillsSign);
+  return (
+    <mesh
+      position={[1.75, 2.5, -9.6]}
+      scale={[3.2, 0.8, 1]}
+      rotation={[0, 0, 0]}
     >
       <planeBufferGeometry attach="geometry" args={[3, 3]} />
       <meshBasicMaterial attach="material" map={texture} />
