@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Gui.css";
 import headshot from "../images/headshot.png";
+
+import headshot2 from "../images/headshot2.png";
 import useSceneStore from "../stores/useSceneStore";
 
 function Gui() {
@@ -9,7 +11,9 @@ function Gui() {
 
   return (
     <div className={guiCSS}>
-      <img src={headshot} />
+      {sceneStore.scene === 1 && <img src={headshot2} />}
+      {sceneStore.scene === 2 && <img src={headshot2} />}
+      {sceneStore.scene === 3 && <img src={headshot} />}
       <div className="body">
         <h2
           onClick={() => {
