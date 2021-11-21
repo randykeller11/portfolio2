@@ -55,6 +55,7 @@ function Skills() {
       />
       <Door4 position={[9, -0.1, -9.5]} scale={[0.4, 1.7, 1]} />
       <PrevDoor position={[-6, -0.1, -9.5]} scale={[0.4, 1.7, 1]} />
+
       <SkillIcon
         icon={icons[0]}
         position={[0.5, 2.7, 16]}
@@ -114,7 +115,7 @@ function Skills() {
       <Video
         position={[1.4, 4, -9.7]}
         scale={[9, 4, 1]}
-        video="/MetaTest.mp4"
+        video="/sandboxDemoVid.mp4"
       />
     </Suspense>
   );

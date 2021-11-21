@@ -15,6 +15,7 @@ import Galaxy from "../components/Galaxy";
 import Djbooth from "../components/Djbooth";
 import GolfClock from "../components/GolfClock";
 import Guitar from "../components/Guitar";
+import Video from "../components/Video";
 
 import {
   DillaPoster,
@@ -92,7 +93,6 @@ function AboutMe() {
         rotation={[0, 0.1, 0]}
       />
 
-      <SkillsDoor />
       <Djbooth
         position={[21.48, -1, 16.05]}
         scale={[1.35, 1.35, 1.35]}
