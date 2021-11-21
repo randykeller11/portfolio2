@@ -5,7 +5,7 @@ export default function Scene({ ...props }) {
   const size = useAspect(1800, 1000);
   const [video] = useState(() => {
     const vid = document.createElement("video");
-    vid.src = "/MetaTest.mp4";
+    vid.src = props.video;
     vid.crossOrigin = "Anonymous";
     vid.loop = true;
     return vid;

@@ -111,7 +111,11 @@ function Skills() {
         scale={[4, 2.8, 1]}
       />
       <SkillsSign />
-      <Video position={[1.4, 4, -9.7]} scale={[9, 4, 1]} />
+      <Video
+        position={[1.4, 4, -9.7]}
+        scale={[9, 4, 1]}
+        video="/MetaTest.mp4"
+      />
     </Suspense>
   );
 }
