@@ -10,7 +10,6 @@ export default function Scene({ ...props }) {
     vid.loop = true;
     return vid;
   });
-  // Keep in mind videos can only play once the user has interacted with the site ...
   useEffect(() => void video.play(), [video]);
   return (
     <mesh scale={size} {...props}>
