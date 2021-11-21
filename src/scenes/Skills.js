@@ -14,6 +14,7 @@ import Avatar5 from "../components/Avatar5";
 import useSceneStore from "../stores/useSceneStore";
 import Loader from "../components/Loader";
 import { SkillsSign } from "../components/Posters";
+import Video from "../components/Video";
 
 function Skills() {
   const icons = useTexture([
@@ -110,6 +111,7 @@ function Skills() {
         scale={[4, 2.8, 1]}
       />
       <SkillsSign />
+      <Video position={[1.4, 4, -9.7]} scale={[9, 4, 1]} />
     </Suspense>
   );
 }
