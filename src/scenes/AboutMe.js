@@ -1,5 +1,5 @@
 import React, { Suspense, useEffect, useState } from "react";
-import { Sky, useProgress, Html, useGLTF } from "@react-three/drei";
+import { Sky } from "@react-three/drei";
 import PortAv0 from "../components/PortAv0";
 import PortAv1 from "../components/PortAv1";
 import PortAv2 from "../components/PortAv2";
@@ -78,7 +78,7 @@ function AboutMe() {
       />
       <Basketball
         position={[9.5, 0.2, 28.5]}
-        scale={[0.6, 0.6, 0.6]}
+        scale={[0.45, 0.45, 0.45]}
         rotation={[0, 0, 0.7]}
       />
       <VendingMachine
