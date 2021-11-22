@@ -8,6 +8,7 @@ export default function Scene({ ...props }) {
     vid.src = props.video;
     vid.crossOrigin = "Anonymous";
     vid.loop = true;
+    vid.muted = true;
     return vid;
   });
   useEffect(() => void video.play(), [video]);

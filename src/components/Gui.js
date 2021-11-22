@@ -35,7 +35,10 @@ function Gui() {
         {sceneStore.scene === 2 && (
           <h3>
             Welcome to the skills section! Most of the technologies in this room
-            were used to make this site. The next room contains a physics demo
+            were used to make this site. Behind you is a demo for my prototype
+            scene builder application. If you would like to look under the hood,
+            click the github link in the bottom left of your screen. The next
+            room contains a fun first person driving experience with physics
             using the library cannon.js.
           </h3>
         )}

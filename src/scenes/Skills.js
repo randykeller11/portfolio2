@@ -115,7 +115,7 @@ function Skills() {
       <Video
         position={[1.4, 4, -9.7]}
         scale={[9, 4, 1]}
-        video="/sandboxDemoVid.mp4"
+        video="/sandboxVid2.mp4"
       />
     </Suspense>
   );

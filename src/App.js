@@ -87,7 +87,7 @@ function App() {
         </>
       )}
       <div className="github">
-        <a href="https://github.com/randykeller11/portfolio2">
+        <a href="https://github.com/randykeller11">
           <img src={github} />
         </a>
       </div>
