@@ -27,3 +27,8 @@
   cursor: pointer;
   border: 4px solid darkorange;
 }
+
+.mainMenu > h4 {
+  padding-left: 12vw;
+  padding-top: 5vh;
+}

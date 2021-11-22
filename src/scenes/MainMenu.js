@@ -60,6 +60,7 @@ function MainMenu() {
         <h1>Welcome to my portfolio site!</h1>
         <h2>Choose your avatar</h2>
       </div>
+      <h4>**Sadly this site does not support mobile browsing</h4>
     </div>
   );
 }
