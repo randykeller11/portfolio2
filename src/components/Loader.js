@@ -11,7 +11,14 @@ function Loader() {
       sceneStore.toggleLoaded(true);
     };
   }, []);
-  return <Html center>Loading Randy's awesome portfolio! {dispNum}% </Html>;
+  return (
+    <>
+      <Html style={{ top: "40vh" }} right>
+        Fullscreen recommended
+      </Html>
+      <Html center>Building a small digital universe: {dispNum}%</Html>
+    </>
+  );
 }
 
 export default Loader;

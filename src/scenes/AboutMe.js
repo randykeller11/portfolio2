@@ -15,7 +15,7 @@ import Galaxy from "../components/Galaxy";
 import Djbooth from "../components/Djbooth";
 import GolfClock from "../components/GolfClock";
 import Guitar from "../components/Guitar";
-import Video from "../components/Video";
+import Portal from "../components/Portal";
 
 import {
   DillaPoster,
@@ -92,7 +92,19 @@ function AboutMe() {
         scale={[0.4, 1.7, 1]}
         rotation={[0, 0.1, 0]}
       />
-
+      <mesh
+        position={[1.8, 1.7, 24.01]}
+        scale={[1.2, 0.9, 1]}
+        rotation={[0, 3.2, -1.56]}
+      >
+        <planeBufferGeometry attach="geometry" args={[3, 3]} />
+        <meshBasicMaterial attach="material" color="black" />
+      </mesh>
+      <Portal
+        position={[1.6, 1.9, 24]}
+        scale={[0.85, 0.85, 0.85]}
+        rotation={[0, 3.2, 0]}
+      />
       <Djbooth
         position={[21.48, -1, 16.05]}
         scale={[1.35, 1.35, 1.35]}
