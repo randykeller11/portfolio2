@@ -14,7 +14,8 @@ import Avatar5 from "../components/Avatar5";
 import useSceneStore from "../stores/useSceneStore";
 import Loader from "../components/Loader";
 import { SkillsSign } from "../components/Posters";
-
+import Video from "../components/Video";
+import Portal from "../components/Portal";
 function Skills() {
   const icons = useTexture([
     "/assets/react.png",
@@ -53,7 +54,34 @@ function Skills() {
         rotation={[0, -1.6, 0]}
       />
       <Door4 position={[9, -0.1, -9.5]} scale={[0.4, 1.7, 1]} />
+      <mesh
+        position={[9, 1.8, -9.6]}
+        scale={[1.3, 0.9, 1]}
+        rotation={[0, 0, -1.56]}
+      >
+        <planeBufferGeometry attach="geometry" args={[3, 3]} />
+        <meshBasicMaterial attach="material" color="black" />
+      </mesh>
+      <Portal
+        position={[9, 2, -9.45]}
+        scale={[0.85, 0.85, 0.85]}
+        rotation={[0, 0, 0]}
+      />
       <PrevDoor position={[-6, -0.1, -9.5]} scale={[0.4, 1.7, 1]} />
+      <mesh
+        position={[-6, 1.8, -10]}
+        scale={[1.3, 0.9, 1]}
+        rotation={[0, 0, -1.56]}
+      >
+        <planeBufferGeometry attach="geometry" args={[3, 3]} />
+        <meshBasicMaterial attach="material" color="black" />
+      </mesh>
+
+      <Portal
+        position={[-6, 2, -9.9]}
+        scale={[0.85, 0.85, 0.85]}
+        rotation={[0, 0, 0]}
+      />
       <SkillIcon
         icon={icons[0]}
         position={[0.5, 2.7, 16]}
@@ -110,6 +138,11 @@ function Skills() {
         scale={[4, 2.8, 1]}
       />
       <SkillsSign />
+      <Video
+        position={[1.4, 4, -9.7]}
+        scale={[9, 4, 1]}
+        video="/sandboxVid2.mp4"
+      />
     </Suspense>
   );
 }

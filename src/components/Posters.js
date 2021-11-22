@@ -55,8 +55,8 @@ export function SkillsSign() {
   const texture = useLoader(THREE.TextureLoader, skillsSign);
   return (
     <mesh
-      position={[1.75, 2.5, -9.6]}
-      scale={[3.2, 0.8, 1]}
+      position={[1.4, 0.9, -9.6]}
+      scale={[3.2, 0.6, 1]}
       rotation={[0, 0, 0]}
     >
       <planeBufferGeometry attach="geometry" args={[3, 3]} />

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./Gui.css";
-import headshot from "../images/headshot.png";
+import headshot3 from "../images/headshot.png";
 
-import headshot2 from "../images/headshot2.png";
+import headshot from "../images/headshot2.png";
+import headshot2 from "../images/skillsHeadshot.png";
 import useSceneStore from "../stores/useSceneStore";
 
 function Gui() {
@@ -11,9 +12,9 @@ function Gui() {
 
   return (
     <div className={guiCSS}>
-      {sceneStore.scene === 1 && <img src={headshot2} />}
+      {sceneStore.scene === 1 && <img src={headshot} />}
       {sceneStore.scene === 2 && <img src={headshot2} />}
-      {sceneStore.scene === 3 && <img src={headshot} />}
+      {sceneStore.scene === 3 && <img src={headshot3} />}
       <div className="body">
         <h2
           onClick={() => {
@@ -35,8 +36,10 @@ function Gui() {
         {sceneStore.scene === 2 && (
           <h3>
             Welcome to the skills section! Most of the technologies in this room
-            were used to make this site. The next room contains a physics demo
-            using the library cannon.js.
+            were used to make this site. Behind you is a demo for my prototype
+            scene builder application. It's basically a no code GUI for
+            react-three-fiber. The next room contains a fun first person driving
+            experience with physics using the library cannon.js.
           </h3>
         )}
         {sceneStore.scene === 3 && (
