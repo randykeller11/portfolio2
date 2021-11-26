@@ -17,8 +17,8 @@ function Loader() {
         Fullscreen recommended
       </Html>
       <Html style={{ right: "43vw", top: "14vh" }} right>
-        Netlify can be a little slow for non enterprise accounts. You can
-        checkout my github in the meantime 👇🏾
+        Netlify can be a little slow for non enterprise accounts. You can check
+        out my github in the meantime 👇🏾
       </Html>
       <Html center>Building a small digital universe: {dispNum}%</Html>
     </>
