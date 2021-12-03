@@ -22,10 +22,10 @@ function Skills() {
     "/assets/node.png",
     "/assets/three.png",
     "/assets/zustand.png",
-    "/assets/drei.jpeg",
+    "/assets/yjs.png",
     "/assets/firebase2.png",
     "/assets/next.png",
-    "/assets/html.png",
+    "/assets/redux.jpeg",
     "/assets/css.png",
     "/assets/blender.png",
     "/assets/mixamo.png",
@@ -99,48 +99,43 @@ function Skills() {
       />
       <SkillIcon
         icon={icons[3]}
-        position={[-9.1, 2.2, 10]}
-        scale={[3.5, 2.5, 1]}
+        position={[-0.5, 3.75, -9]}
+        scale={[4, 3, 1]}
       />
       <SkillIcon
         icon={icons[4]}
-        position={[-9.5, 2.2, 14]}
-        scale={[3, 2.5, 1]}
+        position={[3.5, 3.75, -9]}
+        scale={[2.5, 2.5, 1]}
       />
       <SkillIcon
         icon={icons[5]}
-        position={[10.5, 2.2, 15]}
+        position={[10.9, 2.5, 1.9]}
         scale={[4.5, 3.5, 1]}
       />
-      <SkillIcon
-        icon={icons[6]}
-        position={[10.5, 2.2, 10.9]}
-        scale={[3, 2, 1]}
-      />
-      <SkillIcon
-        icon={icons[7]}
-        position={[10.5, 2.4, 1.6]}
-        scale={[2.5, 2, 1]}
-      />
-      <SkillIcon
-        icon={icons[8]}
-        position={[10.5, 2.4, -2.8]}
-        scale={[2.8, 2.2, 1]}
-      />
+
+      <SkillIcon icon={icons[6]} position={[10.5, 2.4, -2]} scale={[3, 2, 1]} />
+
       <SkillIcon
         icon={icons[9]}
-        position={[-9, 2.4, 1]}
-        scale={[2.8, 2.8, 1]}
+        position={[-9, 2, 9.5]}
+        scale={[2.5, 2.5, 1]}
       />
       <SkillIcon
         icon={icons[10]}
-        position={[-9, 2.4, -3.5]}
-        scale={[4, 2.8, 1]}
+        position={[-9, 2.25, 14]}
+        scale={[4, 2.3, 1]}
       />
       <SkillsSign />
       <Video
-        position={[1.4, 4, -9.7]}
+        position={[11.8, 2.6, 13]}
         scale={[9, 4, 1]}
+        rotation={[0, -Math.PI / 2, 0]}
+        video="/sandboxVid2.mp4"
+      />
+      <Video
+        position={[-10.15, 2.5, -1.5]}
+        scale={[9, 4, 1]}
+        rotation={[0, Math.PI / 2, 0]}
         video="/sandboxVid2.mp4"
       />
     </Suspense>
